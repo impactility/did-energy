@@ -1,5 +1,5 @@
 
-# `did-energy` DID Method Specification
+# `did:energy` DID Method Specification
 
 EnergyID is an SSI method for energy sector related uses cases.
 
