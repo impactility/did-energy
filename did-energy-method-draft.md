@@ -13,9 +13,9 @@ The Energy DID method will be identified by the `energy` scheme.
 
 A valid Energy DID:
 
-On EnergyWeb mainnet - `did:energy:ewc:<identity-type-specific-identifier>`
-On Ethereum mainnet  - `did:energy:eth:<identity-type-specific-identifier>`
-On Polygon mainnet   - `did:energy:pol:<identity-type-specific-identifier>`
+On EnergyWeb mainnet - ```did:energy:ewc:<identity-type-specific-identifier>```
+On Ethereum mainnet  - ```did:energy:eth:<identity-type-specific-identifier>```
+On Polygon mainnet   - ```did:energy:pol:<identity-type-specific-identifier>```
 
 
 ## DID Document
