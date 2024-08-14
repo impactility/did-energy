@@ -9,6 +9,14 @@ Energy ID DID - will be an implementation of the [iden3 protocol](https://docs.i
 ## Method Specific Identifier
 The Energy DID method will be identified by the `energy` scheme.
 
+
+```
+energy-did = "did:energy:" energy-id-specific-idstring
+energy-id-specific-idstring = energy-id-blockchain ":" energy-id-identifier
+energy-id-blockchain = "ewc" / "eth" / "pol"
+energy-id-identifier = 42*43 BASE58
+```
+
 ### Example
 
 A valid Energy DID:
