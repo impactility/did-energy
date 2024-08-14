@@ -19,7 +19,24 @@ On Polygon mainnet   - ```did:energy:pol:<identity-type-specific-identifier>```
 
 
 ## DID Document
+```json
+{
+        "@context": [
+            "https://www.w3.org/ns/did/v1",
+            "https://schema.iden3.io/core/jsonld/auth.jsonld"
+        ],
+        "id": "did:energy:<network>:<identifier>",
+        "authentication": [],
+        "verificationMethod":[],
+        "assertionMethod":[],
+        "keyAgreement":[],
+        "capabilityInvocation":[],
+        "capabilityDelegation":[],
+        "service":[],
+        "publicKey":[]
 
+    }
+```
 ## JSON-LD Context
 ## Type of identities
 ## CRUD Operations
@@ -30,6 +47,11 @@ On Polygon mainnet   - ```did:energy:pol:<identity-type-specific-identifier>```
 ### Revoke
 
 ## Use Cases
+###
+Decentralised Energy Resources(DER)
+###
+Electic Mobility
+
 ## Security and Privacy Considerations
 - The Privacy Considerations section of the DID Implementation Guide: [https://w3c.github.io/did-imp-guide/#privacy-considerations](https://w3c.github.io/did-imp-guide/#privacy-considerations).
 - The Privacy Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: [https://www.w3.org/TR/did-core/#privacy-considerations](https://www.w3.org/TR/did-core/#privacy-considerations).
