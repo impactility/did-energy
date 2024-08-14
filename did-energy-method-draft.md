@@ -47,18 +47,20 @@ On Polygon mainnet   - ```did:energy:pol:<identity-type-specific-identifier>```
 ### Revoke
 
 ## Use Cases
-###
-Decentralised Energy Resources(DER)
-###
-Electic Mobility
+### Decentralised Energy Resources(DER)
+### Electic Mobility
+### Digital Product Passports
 
 ## Security and Privacy Considerations
+
+### Key Management
+
 - The Privacy Considerations section of the DID Implementation Guide: [https://w3c.github.io/did-imp-guide/#privacy-considerations](https://w3c.github.io/did-imp-guide/#privacy-considerations).
 - The Privacy Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: [https://www.w3.org/TR/did-core/#privacy-considerations](https://www.w3.org/TR/did-core/#privacy-considerations).
 - The Privacy Considerations section of the DID Implementation Guide: [https://w3c.github.io/did-imp-guide/#privacy-considerations](https://w3c.github.io/did-imp-guide/#privacy-considerations).
 - The Privacy Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: [https://www.w3.org/TR/did-core/#privacy-considerations](https://www.w3.org/TR/did-core/#privacy-considerations).
 
-
+## Reference Implementation
 ## References
 
 [Decentralized Identifiers (DIDs)](https://www.w3.org/TR/did-core/)\
