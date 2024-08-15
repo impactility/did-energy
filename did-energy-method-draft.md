@@ -46,6 +46,23 @@ On Polygon mainnet   - ```did:energy:pol:<identity-type-specific-identifier>```
     }
 ```
 ## JSON-LD Context
+
+The energy did method uses additional JSON-LD types.
+
+The JSON-LD vocabulary is stored in:
+
+```
+https://schema.iden3.io/core/jsonld/auth.jsonld
+```
+
+Context contains `AuthBJJCredential`(Operational key)  and `Iden3StateInfo2023` types.
+
+```
+https://schema.iden3.io/core/jsonld/iden3proofs.jsonld
+```
+
+Context contains `Iden3SparseMerkleTreeProof` and `BJJSignature2021` proofs types used with energy id.
+
 ## Type of identities
 ## CRUD Operations
 
@@ -54,24 +71,32 @@ On Polygon mainnet   - ```did:energy:pol:<identity-type-specific-identifier>```
 ### Resolve 
 ### Revoke
 
-## Use Cases
-### Decentralised Energy Resources(DER)
-Distributed Energy Resources (DERs), such as solar panels, wind turbines, battery storage systems, microgrids, and electric vehicles should adopt `did:energy` method. `did:energy` method ensures enhanced security, privacy, and interoperability. Unlike traditional systems that rely on centralized authorities,`did:energy` DIDs offer cryptographic security, ensuring tamper-proof and decentralised, autonomous identity management. This decentralized approach empowers DER owners, protects sensitive data through privacy-preserving features, and supports seamless integration across various platforms, enabling more resilient and scalable energy systems as the grid becomes increasingly decentralized and diverse.
 
-### Electic Mobility
-The Electric Mobility sector should adopt `did:energy` based  Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs) to address the challenges of identity federation and fragmentation. Traditional identity systems in this sector are often siloed, leading to fragmented identities across different charging networks, vehicle systems, and service providers. `did:energy` DIDs provide a unified, decentralized identity solution that allows electric vehicles, charging stations, and users to securely authenticate and interact across multiple platforms. Verifiable Credentials issued to `did:energy` DIDs will enable the seamless exchange of trusted information without relying on centralized authorities, fostering interoperability, enhancing privacy, and simplifying the user experience in a rapidly expanding and interconnected mobility ecosystem.
 
-### Digital Product Passports
-The energy sector faces increasing regulatory demands for transparency, sustainability, and traceability of products throughout their lifecycle. Digital Product Passports (DPPs) are becoming essential to meet these needs, providing a comprehensive record of an energy product's origin, manufacturing process, certifications, and compliance with environmental and safety standards. `did:energy` Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs) can offer a robust solution for implementing DPPs by enabling secure, decentralized, and tamper-proof identification and verification of product information. DIDs provide a unique, immutable identity for each product, while VCs store verifiable data about the product’s regulatory compliance and other key attributes. This approach not only ensures that all stakeholders, from manufacturers to regulators, can access accurate and consistent information but also simplifies the process of proving compliance with complex regulatory frameworks, ultimately supporting the sector's move towards more responsible and transparent practices.
+## Privacy Considerations
 
-## Security and Privacy Considerations
+### Safeguarding Personally Identifiable Information (PII)
+To protect privacy, PII should never be exposed or referenced within did:energy DID documents. Any sensitive information must remain securely off-chain to prevent unauthorized access or disclosure.
 
-### Key Management
+### Disclosures
+References and historical changes within DID Documents are stored on the blockchain. It is important for identity owners to recognize that on-chain data is publicly accessible unless it is hashed or encrypted, and should take appropriate precautions.
 
+### Privacy Considerations in W3C DID Specification
+The did:energy method adheres to the privacy principles outlined in the W3C DID Specification, ensuring that privacy is maintained throughout the lifecycle of the DID.
 - The Privacy Considerations section of the DID Implementation Guide: [https://w3c.github.io/did-imp-guide/#privacy-considerations](https://w3c.github.io/did-imp-guide/#privacy-considerations).
 - The Privacy Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: [https://www.w3.org/TR/did-core/#privacy-considerations](https://www.w3.org/TR/did-core/#privacy-considerations).
 - The Privacy Considerations section of the DID Implementation Guide: [https://w3c.github.io/did-imp-guide/#privacy-considerations](https://w3c.github.io/did-imp-guide/#privacy-considerations).
 - The Privacy Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: [https://www.w3.org/TR/did-core/#privacy-considerations](https://www.w3.org/TR/did-core/#privacy-considerations).
+
+## Security Considerations
+### Key Management and Rotation
+It is crucial to keep private keys secure and protected. In the event that a private key is compromised, the did:energy method supports key rotation, allowing for the replacement of the compromised key with a new one, ensuring continued security of the DID.
+
+### Mitigating Eavesdropping Attacks
+To prevent eavesdropping attacks, it is essential to use secure communication channels, such as those secured with TLS or equivalent protocols. Since our DID method employs a message-based communication protocol that does not have native encryption, securing the transmission of sensitive information is critical to maintaining confidentiality.
+
+### Preventing Data Forgery
+The did:energy method safeguards against data forgery and falsification by implementing Digital Signatures, Merkle Tree Proofs, and Zero Knowledge Proofs (ZKPs). These cryptographic techniques ensure that only the rightful identity owner can issue and present credentials, protecting the integrity and authenticity of the data within the DID system.
 
 ## Reference Implementation
 ## References
