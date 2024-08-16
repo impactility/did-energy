@@ -3,19 +3,52 @@ Version: draft 0.1
 # Introduction
 This is a draft document. The purpose of this document is to propose a [w3c did](https://w3c-ccg.github.io/did-spec/) compliant DID method tailored for energy sector related use cases. This draft outlines a DID method specifically designed to address the unique challenges and requirements of energy-related use cases, such as Decentralised Energy Resources (DER) integrations, smart grid management, electic mobility and traceability of environmental attributes. By leveraging the principles of decentralization, privacy, and interoperability, this method aims to enhance trust and efficiency within the energy ecosystem.
 
-# did:energy Method Specification
+# `did:energy` Method Specification
 Energy ID DID - will be an implementation of the [iden3 protocol](https://docs.iden3.io/protocol/spec/). The iden3 protocol is compatible with any Ethereum Virtual Machine (EVM) based blockchains.
 
 ## Method Specific Identifier
 The Energy DID method will be identified by the `energy` scheme.
 
+```
+energy-did = "did:" energy ":" energy-did-method-specific-idstring
+energy-did-method-specific-idstring = blockchain-network ":" unique-identifier
+blockchain-network = "ewc" / "eth" / "pol"
+unique-identifier = 42*43 BASE58
+```
+
+The `unique-identifier` also depends on the type of identity selected by the user.
+### Type of Identities
+#### Ethereum Account based Identity
+This type of energy id allows using Ethereum accounts to authenticate, prove claims and perform on chain operations.
+
+The `unique-identifier` for this type of identity is derived in the following way:
+```
+unique-identifier = idType + zeroPadding + ethAddress + checksum
+```
+
+where:
+- idType - identifier of DID method and blockchain network & subnetwork, 2 bytes
+- zeroPadding - 7 zero bytes
+- ethAddress - Ethereum address of controlling Ethereum account, 20 bytes
+- checksum - control checksum, 2 bytes
+
+Example:
+```
+<add example>
+```
+
+#### BJJ(Baby JubJub) Keys based Identity
+These are also called as Regular identity as iden3 protocol spec. This identity is created from three merkle trees(Genesis State is a hash of Identity SMT Roots). This identity is primarily controlled by Baby JubJub keys. At least one BJJ public key must be added into Claims Tree during the identity creation.
 
 ```
-energy-did = "did:energy:" energy-id-specific-idstring
-energy-id-specific-idstring = energy-id-blockchain ":" energy-id-identifier
-energy-id-blockchain = "ewc" / "eth" / "pol"
-energy-id-identifier = 42*43 BASE58
+genesisState = Hash(ClaimsTreeRoot || RevocationsTreeRoot || RootsTreeRoot)
+
+unique-identifier = idType + genesisStateCut + checksum
 ```
+where:
+- idType - identifier of DID method and blockchain network & subnetwork, 2 bytes
+- genesisStateCut - first 27 bytes of genesisState, 27 bytes
+- checksum - control checksum, 2 bytes
 
 ### Example
 
