@@ -19,3 +19,6 @@ The energy sector faces increasing regulatory demands for transparency, sustaina
 
 # Contributing
 Pull requests are welcome. For detailed discussions, please open an issue first to discuss what you would like to propose.
+
+# License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
